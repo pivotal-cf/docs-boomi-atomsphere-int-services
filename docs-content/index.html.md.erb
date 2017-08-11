@@ -40,7 +40,6 @@ Boomi AtomSphere Integration Services for PCF includes the following key feature
 * Runtime Isolation: Each Boomi Atom runs within its own dedicated virtual machine within PCF, providing individual, isolated integration runtime environments.
 * Integrated Management: The Boomi Atom service is managed entirely by the PCF service lifecycle.
 
-
 ## <a id="snapshot"></a>Product Snapshot
 
 The following table provides version and version-support information about Boomi AtomSphere Integration Services for
@@ -59,15 +58,15 @@ PCF.
     </tr>
     <tr>
         <td>Software component version</td>
-        <td>vYOUR-SOFTWARE-COMPONENT-VERSION-NUMBER</td>
+        <td>current version</td>
     </tr>
     <tr>
         <td>Compatible Ops Manager version(s)</td>
-        <td>vYOUR-COMPATIBLE-OPS-MAN-VERSION (Ex. v1.8.x, v1.9.x, v1.10.x)</td>
+        <td>v1.11.x</td>
     </tr>
     <tr>
         <td>Compatible Elastic Runtime version(s)</td>
-        <td>vYOUR-COMPATIBLE-ELASTIC-RUNTIME-VERSION (Ex. v1.8.x, v1.9.x, v1.10.x)</td>
+        <td>v1.11.x</td>
     </tr>
     <tr>
         <td>IaaS support</td>
@@ -85,7 +84,7 @@ Boomi AtomSphere Integration Services for PCF has the following requirements:
 
 + The ability to deploy a Boomi Atom on PCF requires a Boomi AtomSphere license. If you are not currently a Boomi
 customer, you can get a [30-day free trial](https://marketing.boomi.com/trial)
-+ FIXME include note here that atom must be able to phone home (external network access).  For the complete list of hostnames, see the row titled "Install and maintain Atoms, Molecules or Atom Clouds" in [Hostnames and IP addresses for connecting with Dell Boomi](http://help.boomi.com/atomsphere/GUID-18185BA9-A157-4B2E-B426-FE340D02C986.html)
++ Boomi Atoms must be able to connect to the Boomi AtomSphere platform.  The **Internet Connected** option must always be enabled for the Atom virtual machines.  If there is an outbound firewall in place, certain hostnames must be accessible.  For the complete list of hostnames, see the row titled "Install and maintain Atoms, Molecules or Atom Clouds" in [Hostnames and IP addresses for connecting with Dell Boomi](http://help.boomi.com/atomsphere/GUID-18185BA9-A157-4B2E-B426-FE340D02C986.html)
 
 ## <a id="limitations"></a>Limitations
 
