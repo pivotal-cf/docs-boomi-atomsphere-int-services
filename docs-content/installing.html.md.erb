@@ -16,21 +16,21 @@ This adds the tile to your staging area.
 
 1. Click the newly added **Boomi AtomSphere Integration Services for PCF** tile.
 
-1. On the **Assign AZs and Network** tab, choose the appropriate availability zone and network for your Atom(s). Since your Atom will require external network access, the **Network** should generally be the **ert** or other non-**infrastructure** network.
+1. On the **Assign AZs and Network** tab, choose the appropriate availability zone and network for the Atom(s). Since the Atom will require external network access, the **Network** should generally be the **ert** or other non-**infrastructure** network.
 
 1. Click **Save**.
 
 1. Switch to the **Boomi Atom** tab and configure the Atom installation parameters.
 
-1. Fill in an Atom name.  An instance number will automatically be appended to the name you chose.  E.g. if the name "PCF_Atom" is chosen, the first Atom installed will be named "PCF_Atom_0", the second "PCF_Atom_1", etc.
+1. Fill in an Atom name.  An instance number will automatically be appended to the name you chose.  E.g. if the name "PCF\_Atom" is chosen, the first Atom installed will be named "PCF\_Atom\_0", the second "PCF\_Atom\_1", etc.
 
-1. Choose the Atom installation type, **Token** or **Username/Password**.  Note that **Token** installation is recommended for better security, however, this installation method can only install one Atom at a time (you must go through all the configuration steps, **Apply changes**, and then come back, configure a new token, and **Apply changes** again).
+1. Choose the Atom installation type, **Token** or **Username/Password**.  Note that **Token** installation is recommended as the more secure option, however, this installation method can only install one Atom at a time (you must go through all the configuration steps, **Apply changes**, and then come back, configure a new token, and **Apply changes** again).
 
 1. If **Token** installation is chosen, fill in the **Atom Installer Token** field with a token generated from the AtomSphere user interface (see the [token generation instructions](http://help.boomi.com/atomsphere/GUID-952C5A8A-1F1C-4709-AF1C-C60DD2EE9D9F.html) ).
 
-1. If **Username/Password** installation is chosen, fill in the **Platform Account** field with the appropriate AtomSphere account ID (this is the account into which the Atom will be installed), the **Platform User* field with your AtomSphere username, and the **Platform Password** field with your AtomSphere password.
+1. If **Username/Password** installation is chosen, fill in the **Platform Account** field with the appropriate AtomSphere account ID (this is the account into which the Atom will be installed), the **Platform User** field with your AtomSphere username, and the **Platform Password** field with your AtomSphere password.
 
-1. Note that all the settings on this tab are only relevant the first time an Atom is started (when it runs the Atom installation process).
+1. Note that all the settings on this tab are only relevant the first time an Atom virtual machine is started (when the Atom installation process is run).
 
 1. Click **Save**.
 
