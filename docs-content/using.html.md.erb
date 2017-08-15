@@ -9,23 +9,27 @@ This topic describes how to use Boomi AtomSphere Integration Services for PCF.
 
 ### General Usage
 
-Since the Boomi Atom is mostly controlled via the AtomSphere platform, there is very little which needs to be done
+Because the Boomi Atom is mostly controlled via the AtomSphere platform, there is very little which needs to be done
 from within PCF.  There are a few tasks which may need to be done directly in PCF from time to time:
 
-#### Starting and stopping the Boomi Atom service (and/or the hosting virtual machines)
+#### Start and Stop the Boomi Atom Service (and/or the Hosting VMs)
 
-The Atoms can be controlled as normal Bosh services.
+The Atoms can be controlled as normal BOSH services.
 
-#### Accessing files on the Atom's filesystem
+#### Access Files on the Atom's File System
 
-Occassionally, files may need to be accessed or modified directly on the Atom's local filesystem.  In order to get to this location, use the following steps:
+Occasionally, files may need to be accessed or modified directly on the Atom's local file system.
+In order to get to this location, follow these steps:
 
-1. Find the Atom's local directory from the [Startup Properties panel](http://help.boomi.com/atomsphere/GUID-390D5707-698A-4FB1-A0E2-6B236E3F4580.html) in the AtomSphere user interface under the entry named **Atom Installation Directory**.
-1. Ssh to the appropriate virtual machine using the standard Bosh procedures.
-1. Use the information from the first step to 'cd' into the Atom's installation directory.
+1. Find the Atom's local directory from the [Startup Properties panel](http://help.boomi.com/atomsphere/GUID-390D5707-698A-4FB1-A0E2-6B236E3F4580.html)
+   in the AtomSphere user interface under the entry named **Atom Installation Directory**.
+1. SSH to the appropriate VM using the standard BOSH procedures.
+1. Use the information from the first step to change into the Atom's installation directory.
 
-#### Resizing the Virtual Machine hosting the Atom
+#### Resize the VM Hosting the Atom
 
-Return to the **Resource Config** tab in the tile configuration page.  Choose the new configuration parameters as
-appropriate and **Apply changes**.  Note that the Atom will be restarted as the underlying virtual machine is
-re-sized, but no information will be lost.
+1. Return to the **Resource Config** tab in the tile configuration page.
+
+1. Select the new configuration parameters and **Apply changes**.
+
+    The Atom is restarted because the underlying VM is re-sized, but no information is lost.

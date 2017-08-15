@@ -10,18 +10,18 @@ purposes only.  Do not use this product in a PCF production environment.
 </p>
 
 This documentation describes the Boomi AtomSphere Integration Services for Pivotal Cloud Foundry (PCF). The Boomi
-AtomSphere Integration Services for PCF tile creates and starts one or more Boomi Atoms running on individual virtual
-machines within PCF.
+AtomSphere Integration Services for PCF tile creates and starts one or more Boomi Atoms running on individual VMs
+within PCF.
 
 ## <a id='overview'></a>Overview
 
 ### Turn Data into Intelligent Action with Dell Boomi for PCF
 
-The Boomi AtomSphere integration platform as a service (iPaaS) supports all your application integration requirements
-– between cloud platforms, software-as-a-service applications, and on-premises systems. Your entire team has online
+The Boomi AtomSphere integration platform as a service (iPaaS) supports all your app integration requirements
+— between cloud platforms, software-as-a-service apps, and on-premises systems. Your entire team has online
 access to a powerful range of integration and data management capabilities that can be realized in a fraction of the
 time of legacy middleware technologies. Dell Boomi provides a cloud-based integration platform for the design,
-deployment and management of your integration process. Separate and distinct from the platform is the run-time
+deployment, and management of your integration process. Separate and distinct from the platform is the run-time
 environment to which integration processes are deployed, the Dell Boomi Atom. You can leverage your investment in
 PCF and host your Atoms on PCF.
 
@@ -36,9 +36,10 @@ PCF and host your Atoms on PCF.
 
 Boomi AtomSphere Integration Services for PCF includes the following key features:
 
-* Trivial Provisioning: Developers can easily provision one or more Boomi Atoms.  The Atom's virtual machine and filesystem sizes can be configured using the standard PCF mechanisms.
-* Runtime Isolation: Each Boomi Atom runs within its own dedicated virtual machine within PCF, providing individual, isolated integration runtime environments.
-* Integrated Management: The Boomi Atom service is managed entirely by the PCF service lifecycle.
+* Trivial Provisioning: Developers can easily provision one or more Boomi Atoms.
+  The Atom's VM and file-system sizes can be configured using the standard PCF mechanisms.
+* Runtime Isolation: Each Boomi Atom runs within its own dedicated VM within PCF, providing individual, isolated integration runtime environments.
+* Integrated Management: The Boomi Atom service is managed entirely by the PCF service life cycle.
 
 ## <a id="snapshot"></a>Product Snapshot
 
@@ -83,8 +84,12 @@ PCF.
 Boomi AtomSphere Integration Services for PCF has the following requirements:
 
 + The ability to deploy a Boomi Atom on PCF requires a Boomi AtomSphere license. If you are not currently a Boomi
-customer, you can get a [30-day free trial](https://marketing.boomi.com/trial)
-+ Boomi Atoms must be able to connect to the Boomi AtomSphere platform.  The **Internet Connected** option must always be enabled for the Atom virtual machines.  If there is an outbound firewall in place, certain hostnames must be accessible.  For the complete list of hostnames, see the row titled "Install and maintain Atoms, Molecules or Atom Clouds" in [Hostnames and IP addresses for connecting with Dell Boomi](http://help.boomi.com/atomsphere/GUID-18185BA9-A157-4B2E-B426-FE340D02C986.html)
+customer, you can get a [30-day free trial](https://marketing.boomi.com/trial).
++ Boomi Atoms must be able to connect to the Boomi AtomSphere platform.
+  The **Internet Connected** option must always be enabled for the Atom VMs.
+  If there is an outbound firewall in place, certain hostnames must be accessible.
+  For the complete list of hostnames, see the row titled "Install and maintain Atoms, Molecules or Atom Clouds"
+  in [Hostnames and IP addresses for connecting with Dell Boomi](http://help.boomi.com/atomsphere/GUID-18185BA9-A157-4B2E-B426-FE340D02C986.html).
 
 ## <a id="limitations"></a>Limitations
 
