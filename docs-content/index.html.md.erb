@@ -1,114 +1,98 @@
 ---
-title: YOUR-PRODUCT-NAME (Beta)
+title: Boomi AtomSphere Integration Services for PCF (Beta)
 owner: Partners
 ---
 
 <p class="note warning">
 <strong>WARNING! </strong>
-The PRODUCT-NAME for PCF tile is currently in beta and is intended for evaluation and test purposes only. 
-Do not use this product in a PCF production environment.
+The Boomi AtomSphere Integration Services for PCF tile is currently in beta and is intended for evaluation and test
+purposes only.  Do not use this product in a PCF production environment.
 </p>
 
-**This topic begins with a brief description of what the product tile (e.g. Apigee Edge Service Broker for PCF) does, 
-whereas the Overview section below describes what the service itself (e.g. Apigee Edge) does. See below for an example.**
-
-This documentation describes the Apigee Edge Service Broker for Pivotal Cloud Foundry (PCF). The Apigee Edge Service 
-Broker for PCF enables developers to manage APIs for their PCF apps through the Apigee Edge management console.
-
-**Note**: This description will appear under **OVERVIEW** in the tile's listing on 
-[Pivotal Network](http://network.pivotal.io).
+This documentation describes the Boomi AtomSphere Integration Services for Pivotal Cloud Foundry (PCF). The Boomi
+AtomSphere Integration Services for PCF tile creates and starts one or more Boomi Atoms running on individual virtual
+machines within PCF.
 
 ## <a id='overview'></a>Overview
 
-**The overview describes the service that your product offers to PCF developers. 
-Make sure to overview the features of the integration.
-Don't focus only on the overview of your product that is being integrated.
-See below for an example.**
+### Turn Data into Intelligent Action with Dell Boomi for PCF
 
-The Apigee Edge Service Broker for PCF registers a service broker with PCF and exposes its service plans on the 
-Marketplace. Developers can then create service plan instances using Apps Manager or the Cloud Foundry Command 
-Line Interface (cf CLI) and bind them to their apps.
+The Boomi AtomSphere integration platform as a service (iPaaS) supports all your application integration requirements
+– between cloud platforms, software-as-a-service applications, and on-premises systems. Your entire team has online
+access to a powerful range of integration and data management capabilities that can be realized in a fraction of the
+time of legacy middleware technologies. Dell Boomi provides a cloud-based integration platform for the design,
+deployment and management of your integration process. Separate and distinct from the platform is the run-time
+environment to which integration processes are deployed, the Dell Boomi Atom. You can leverage your investment in
+PCF and host your Atoms on PCF.
 
-Creating an Apigee Edge for PCF service instance and binding it to an app creates an Apigee Edge API proxy that 
-handles requests for the app. This lets developers use the Apigee Edge management console to manage API request 
-handling between clients and the app.
+### Learn More
 
-**Note**: This overview will appear under **OVERVIEW**, combined with the description above in the tile's listing on 
-[Pivotal Network](http://network.pivotal.io).
+* [Dell Boomi Integration Cloud](http://marketing.boomi.com/rs/777-AVU-348/images/Boomi-Integration-Cloud.pdf)
+* [Leader in the Gartner Magic Quadrant for iPaaS](http://marketing.boomi.com/Gartner-Magic-Quadrant-iPaaS-2016.html)
+* [AtomSphere User Guide](http://help.boomi.com/atomsphere/GUID-A98714FA-9EAB-4B69-BCC8-7D8984F0B0EC.html)
+* [Dell Boomi Community](https://community.boomi.com/)
 
 ## <a id='features'></a>Key Features
 
-**Note**: This feature list will appear under **FEATURES** in the tile's listing on 
-[Pivotal Network](http://network.pivotal.io). 
-Make sure you list the key features of the tile (the integration). 
-We cannot accept a list of the key features of your product that we are integrating.
+Boomi AtomSphere Integration Services for PCF includes the following key features:
 
-YOUR-PRODUCT-NAME includes the following key features:
-
-* Feature one.
-* Feature two.
-* Feature three.
-
-
+* Trivial Provisioning: Developers can easily provision one or more Boomi Atoms.  The Atom's virtual machine and filesystem sizes can be configured using the standard PCF mechanisms.
+* Runtime Isolation: Each Boomi Atom runs within its own dedicated virtual machine within PCF, providing individual, isolated integration runtime environments.
+* Integrated Management: The Boomi Atom service is managed entirely by the PCF service lifecycle.
 
 ## <a id="snapshot"></a>Product Snapshot
 
-The following table provides version and version-support information about PRODUCT-NAME.
+The following table provides version and version-support information about Boomi AtomSphere Integration Services for
+PCF.
 
 <table class="nice">
     <th>Element</th>
     <th>Details</th>
     <tr>
         <td>Tile version</td>
-        <td>vYOUR-VERSION-NUMBER</td>
+        <td>v0.9.0</td>
     </tr>
     <tr>
         <td>Release date</td>
-        <td>YOUR-RELEASE-DATE (Ex: July 1, 2017)</td>
+        <td>August 21, 2017</td>
     </tr>
     <tr>
         <td>Software component version</td>
-        <td>vYOUR-SOFTWARE-COMPONENT-VERSION-NUMBER</td>
+        <td>current version</td>
     </tr>
     <tr>
         <td>Compatible Ops Manager version(s)</td>
-        <td>vYOUR-COMPATIBLE-OPS-MAN-VERSION (Ex. v1.8.x, v1.9.x, v1.10.x)</td>
+        <td>v1.11.x</td>
     </tr>
     <tr>
         <td>Compatible Elastic Runtime version(s)</td>
-        <td>vYOUR-COMPATIBLE-ELASTIC-RUNTIME-VERSION (Ex. v1.8.x, v1.9.x, v1.10.x)</td>
+        <td>v1.11.x</td>
     </tr>
     <tr>
         <td>IaaS support</td>
-        <td>AWS?, Azure?, GCP?, OpenStack?, and vSphere?</td>
+        <td>any</td>
     </tr>
     <tr>
         <td>IPsec support?</td>
-        <td>[Yes or No]</td>
+        <td>Yes</td>
     </tr>
 </table>
 
 ## <a id="reqs"></a>Requirements
 
-**Provide any general or specific requirements, prerequisites, or dependencies here. 
-A general requirement might be something like, "An AppDynamics account." 
-A specific requirement might be something like, "Packaging Dependencies for Offline Buildpacks."**
+Boomi AtomSphere Integration Services for PCF has the following requirements:
 
-YOUR-PRODUCT-NAME has the following requirements:
-
-+ PREREQUISITE-1
-
-+ PREREQUISITE-2
++ The ability to deploy a Boomi Atom on PCF requires a Boomi AtomSphere license. If you are not currently a Boomi
+customer, you can get a [30-day free trial](https://marketing.boomi.com/trial)
++ Boomi Atoms must be able to connect to the Boomi AtomSphere platform.  The **Internet Connected** option must always be enabled for the Atom virtual machines.  If there is an outbound firewall in place, certain hostnames must be accessible.  For the complete list of hostnames, see the row titled "Install and maintain Atoms, Molecules or Atom Clouds" in [Hostnames and IP addresses for connecting with Dell Boomi](http://help.boomi.com/atomsphere/GUID-18185BA9-A157-4B2E-B426-FE340D02C986.html)
 
 ## <a id="limitations"></a>Limitations
 
-**List any known limitations.**
 
 ## <a id="feedback"></a>Feedback
 
-If you have a feature request, questions, or information about a bug, please email
-[Pivotal Cloud Foundry Feedback](mailto:pivotal-cf-feedback@pivotal.io) list or send an email to YOUR-SUPPORT-EMAIL.
+If you have a feature request, questions, or information about a bug, please email [Pivotal Cloud Foundry
+Feedback](mailto:pivotal-cf-feedback@pivotal.io) list or contact Dell Boomi Support at [1-800-732-3602](tel:1-800-732-3602).
 
 ## <a id='license'></a>License
 
-**List any license information here.**

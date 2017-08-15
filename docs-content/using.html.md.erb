@@ -1,15 +1,31 @@
 ---
-title: Using YOUR-PRODUCT-NAME
+title: Using Boomi AtomSphere Integration Services for PCF
 owner: Partners
 ---
 
-This topic describes how to use YOUR-PRODUCT-NAME.
+This topic describes how to use Boomi AtomSphere Integration Services for PCF.
 
-##<a id='using'></a> Using YOUR-PRODUCT-NAME
+##<a id='using'></a> Using Boomi AtomSphere Integration Services for PCF
 
-**This topic should include any instructions for how to use the service or dashboard created by the tile. 
-Give procedures for how to perform the different functions offered by your product and provide screenshots where necessary.** 
+### General Usage
 
-**You can also use this section to include information about Architecture and Troubleshooting for known errors. 
-If you include a Troubleshooting section, follow the Symptom/Explanation format used in the 
-[Okta Troubleshooting](http://docs.pivotal.io/p-identity/okta/troubleshooting.html) topic**.
+Since the Boomi Atom is mostly controlled via the AtomSphere platform, there is very little which needs to be done
+from within PCF.  There are a few tasks which may need to be done directly in PCF from time to time:
+
+#### Starting and stopping the Boomi Atom service (and/or the hosting virtual machines)
+
+The Atoms can be controlled as normal Bosh services.
+
+#### Accessing files on the Atom's filesystem
+
+Occassionally, files may need to be accessed or modified directly on the Atom's local filesystem.  In order to get to this location, use the following steps:
+
+1. Find the Atom's local directory from the [Startup Properties panel](http://help.boomi.com/atomsphere/GUID-390D5707-698A-4FB1-A0E2-6B236E3F4580.html) in the AtomSphere user interface under the entry named **Atom Installation Directory**.
+1. Ssh to the appropriate virtual machine using the standard Bosh procedures.
+1. Use the information from the first step to 'cd' into the Atom's installation directory.
+
+#### Resizing the Virtual Machine hosting the Atom
+
+Return to the **Resource Config** tab in the tile configuration page.  Choose the new configuration parameters as
+appropriate and **Apply changes**.  Note that the Atom will be restarted as the underlying virtual machine is
+re-sized, but no information will be lost.
