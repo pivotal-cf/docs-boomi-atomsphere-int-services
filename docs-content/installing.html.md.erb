@@ -3,7 +3,7 @@ title: Installing and Configuring Boomi AtomSphere Integration Services for PCF
 owner: Partners
 ---
 
-This topic describes how to install and configure Boomi AtomSphere Integration Services for PCF.
+This topic describes how to install and configure Boomi AtomSphere Integration Services for Pivotal Cloud Foundry (PCF).
 
 ##<a id='install'></a> Install and Configure Boomi AtomSphere Integration Services for PCF
 
@@ -16,41 +16,57 @@ This adds the tile to your staging area.
 
 1. Click the newly added **Boomi AtomSphere Integration Services for PCF** tile.
 
-1. On the **Assign AZs and Network** tab, choose the appropriate availability zone and network for the Atom(s). Since the Atom will require external network access, the **Network** should generally be the **ert** or other non-**infrastructure** network.
+1. On the **Assign AZs and Network** tab, select the appropriate availability zone and network for the Atom(s).
+   Because the Atom requires external network access, the **Network** should generally be the **ert** or other non-**infrastructure** network.
 
 1. Click **Save**.
 
 1. Switch to the **Boomi Atom** tab and configure the Atom installation parameters.
 
-1. Fill in an Atom name.  An instance number will automatically be appended to the name you chose.  E.g. if the name "PCF\_Atom" is chosen, the first Atom installed will be named "PCF\_Atom\_0", the second "PCF\_Atom\_1", etc.
+1. Enter an Atom name.  An instance number is automatically be appended to the name you chose. 
+   For example, if the name `PCF_Atom` is chosen, the first Atom installed is named `PCF_Atom_0`, the second `PCF_Atom_1`, etc.
 
-1. Choose the Atom installation type, **Token** or **Username/Password**.  Note that **Token** installation is recommended as the more secure option, however, this installation method can only install one Atom at a time (you must go through all the configuration steps, **Apply changes**, and then come back, configure a new token, and **Apply changes** again).
+1. Select the Atom installation type, **Token** or **Username/Password**.
+   Dell recommends the **Token** installation because it is the more secure option.
+   However, this installation method can only install one Atom at a time,
+   you must go through all the configuration steps, **Apply changes**, and then come back, configure a new token, and **Apply changes** again.
 
-1. If **Token** installation is chosen, fill in the **Atom Installer Token** field with a token generated from the AtomSphere user interface (see the [token generation instructions](http://help.boomi.com/atomsphere/GUID-952C5A8A-1F1C-4709-AF1C-C60DD2EE9D9F.html) ).
+1. If **Token** installation is chosen, fill in the **Atom Installer Token** field with a token generated from the AtomSphere user interface.
+   For information about generating a token, see [Downloading the local Atom installer](http://help.boomi.com/atomsphere/GUID-952C5A8A-1F1C-4709-AF1C-C60DD2EE9D9F.html).
 
-1. If **Username/Password** installation is chosen, fill in the **Platform Account** field with the appropriate AtomSphere account ID (this is the account into which the Atom will be installed), the **Platform User** field with your AtomSphere username, and the **Platform Password** field with your AtomSphere password.
+1. If **Username/Password** installation is chosen, fill in the **Platform Account** field with the appropriate AtomSphere account ID
+   (this is the account into which the Atom will be installed), the **Platform User** field with your AtomSphere username,
+   and the **Platform Password** field with your AtomSphere password.
 
-1. Note that all the settings on this tab are only relevant the first time an Atom virtual machine is started (when the Atom installation process is run).
-
-1. Click **Save**.
-
-1. Switch to the **Resource Config** tab and configure the virtual machines which will be hosting the Atoms.  For additional help on these choices, please read the Atom [sizing recommendations](http://help.boomi.com/atomsphere/GUID-DDE05C00-6E04-423B-9073-58557961432A.html).
-
-1. Choose the number of **INSTANCES** according to the number of Atoms to be installed at the end of this configuration
-process (remember, there will be one virtual machine per Atom).
-
-1. Choose the **PERSISTENT DISK TYPE** size appropriate for the amount of working data you expect to use on the Atoms.
-
-1. Choose the **VM TYPE** based on the amount of processing power you need for the integration workloads which will be handled by the Atoms.
-
-1. **Important** Always enable the **INTERNET CONNECTED** option for the Atom virtual machines or they will not be functional!  Also, If there is an outbound firewall in place, certain hostnames must be accessible.  For the complete list of hostnames, see the row titled "Install and maintain Atoms, Molecules or Atom Clouds" in [Hostnames and IP addresses for connecting with Dell Boomi](http://help.boomi.com/atomsphere/GUID-18185BA9-A157-4B2E-B426-FE340D02C986.html)
+    <p class="note"><strong>Note</strong>: The settings on this tab are only relevant the first time an Atom VM is started (when the Atom installation process is run).</p>
 
 1. Click **Save**.
 
-1. Note, the **Stemcell** tab should already be configured to an appropriate Linux distribution for the Atom.
+1. Switch to the **Resource Config** tab and configure the VMs which will be hosting the Atoms.
+   For information about these choices, see [Atom system requirements](http://help.boomi.com/atomsphere/GUID-DDE05C00-6E04-423B-9073-58557961432A.html).
+
+1. Select the number of **INSTANCES** according to the number of Atoms to be installed at the end of this configuration
+process. There is one VM per Atom.
+
+1. Select the **PERSISTENT DISK TYPE** size appropriate for the amount of working data you expect to use on the Atoms.
+
+1. Select the **VM TYPE** based on the amount of processing power you need for the integration workloads which will be handled by the Atoms.
+    
+    <p class="note"><strong>IMPORTANT</strong>: Always enable the <strong>INTERNET CONNECTED</strong> option for the Atom VMs.
+       Also, if there is an outbound firewall in place, certain hostnames must be accessible.
+       For the complete list of hostnames, see the row titled "Install and maintain Atoms, Molecules or Atom Clouds" in 
+       <a href="http://help.boomi.com/atomsphere/GUID-18185BA9-A157-4B2E-B426-FE340D02C986.html">Hostnames and IP addresses for connecting with Dell Boomi</a>.</p>
+
+1. Click **Save**.
+
+    <p class="note"><strong>Note</strong>: The **Stemcell** tab should already be configured to an appropriate Linux distribution for the Atom.
 
 1. Return to the Ops Manager Installation Dashboard and click **Apply changes** to install the Boomi AtomSphere Integration Services for PCF tile.
 
-1. After all the changes are applied to the PCF environment, the newly installed Atoms should show up in the relevant AtomSphere account (either the one chosen for **Username/Password** installation or the one used to generate the installer token for **Token** installation).
+    After all the changes are applied to the PCF environment, the newly installed Atoms should show up in the relevant AtomSphere account,
+    either the one chosen for **Username/Password** installation or the one used to generate the installer token for **Token** installation.
 
-1. Note that if the number of instances is reduced on a subsequent re-configuration of this tile, the additional Atom instances will be stopped and discarded.  However, they will still show up in the AtomSphere user interface.  Please follow the instructions for [manually deleting an Atom from the platform](http://help.boomi.com/atomsphere/GUID-308F6B9B-714A-448E-A594-3AABABEA5D79.html).
+   <p class="note"><strong>Note</strong>: If the number of instances is reduced on a subsequent re-configuration of this tile,
+       the additional Atom instances is stopped and discarded.
+       However, they will still show up in the AtomSphere user interface.
+       Follow the instructions for <a href="http://help.boomi.com/atomsphere/GUID-308F6B9B-714A-448E-A594-3AABABEA5D79.html">manually deleting an Atom from the platform</a>.</p>

@@ -3,29 +3,31 @@ title: Using Boomi AtomSphere Integration Services for PCF
 owner: Partners
 ---
 
-This topic describes how to use Boomi AtomSphere Integration Services for PCF.
+This topic describes how to use Boomi AtomSphere Integration Services for Pivotal Cloud Foundry (PCF).
 
 ##<a id='using'></a> Using Boomi AtomSphere Integration Services for PCF
 
-### General Usage
+Because the Boomi Atom is mostly controlled via the AtomSphere platform, there is very little which needs to be done
+from within PCF.  There are a few tasks which may need to be done directly in PCF from time to time.
 
-Since the Boomi Atom is mostly controlled via the AtomSphere platform, there is very little which needs to be done
-from within PCF.  There are a few tasks which may need to be done directly in PCF from time to time:
+###<a id='start-stop'></a> Start and Stop the Boomi Atom Service (and/or the Hosting VMs)
 
-#### Starting and stopping the Boomi Atom service (and/or the hosting virtual machines)
+The Atoms can be controlled as normal BOSH services.
 
-The Atoms can be controlled as normal Bosh services.
+### Access Files on the Atom's File System
 
-#### Accessing files on the Atom's filesystem
+Occasionally, files may need to be accessed or modified directly on the Atom's local file system.
+In order to get to this location, follow these steps:
 
-Occassionally, files may need to be accessed or modified directly on the Atom's local filesystem.  In order to get to this location, use the following steps:
+1. Find the Atom's local directory from the [Startup Properties panel](http://help.boomi.com/atomsphere/GUID-390D5707-698A-4FB1-A0E2-6B236E3F4580.html)
+   in the AtomSphere user interface under the entry named **Atom Installation Directory**.
+1. SSH to the appropriate VM using the standard BOSH procedures.
+1. Use the information from the first step to change into the Atom's installation directory.
 
-1. Find the Atom's local directory from the [Startup Properties panel](http://help.boomi.com/atomsphere/GUID-390D5707-698A-4FB1-A0E2-6B236E3F4580.html) in the AtomSphere user interface under the entry named **Atom Installation Directory**.
-1. Ssh to the appropriate virtual machine using the standard Bosh procedures.
-1. Use the information from the first step to 'cd' into the Atom's installation directory.
+###<a id='resize-vm'></a> Resize the VM Hosting the Atom
 
-#### Resizing the Virtual Machine hosting the Atom
+1. Return to the **Resource Config** tab in the tile configuration page.
 
-Return to the **Resource Config** tab in the tile configuration page.  Choose the new configuration parameters as
-appropriate and **Apply changes**.  Note that the Atom will be restarted as the underlying virtual machine is
-re-sized, but no information will be lost.
+1. Select the new configuration parameters and **Apply changes**.
+
+    The Atom is restarted because the underlying VM is re-sized, but no information is lost.
